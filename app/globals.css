@@ -1,0 +1,479 @@
+@import "tailwindcss";
+
+/* ============================================
+   LIGHT MODE
+   ============================================ */
+:root {
+  /* Base surfaces */
+  --background: #ffffff;
+  --surface: #f7f8fa;
+  --surface-elevated: #f0f1f5;
+  --card: #f7f8fa;
+  --popover: #ffffff;
+  --sidebar: #f7f8fa;
+  --input: #f1f5f9;
+
+  /* Text */
+  --foreground: #0f1419;
+  --foreground-muted: #475569;
+  --foreground-subtle: #64748b;
+  --muted-foreground: #475569;
+  --card-foreground: #0f1419;
+  --popover-foreground: #0f1419;
+  --sidebar-foreground: #0f1419;
+
+  /* Borders */
+  --border: #d0d9e3;
+  --border-strong: #94a3b8;
+  --sidebar-border: #d0d9e3;
+
+  /* Brand accent — unified across modes */
+  --primary: #9457eb;
+  --primary-foreground: #ffffff;
+  --accent: #9457eb;
+  --accent-foreground: #ffffff;
+  --accent-soft: rgba(148, 87, 235, 0.12);
+  --accent-secondary: #466FFF;
+  --ring: #9457eb;
+  --sidebar-ring: #9457eb;
+  --sidebar-primary: #9457eb;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #9457eb;
+  --sidebar-accent-foreground: #ffffff;
+
+  /* Muted */
+  --muted: #e2e8f0;
+
+  /* Semantic */
+  --secondary: #0f1419;
+  --secondary-foreground: #ffffff;
+  --destructive: #f4212e;
+  --destructive-foreground: #ffffff;
+
+  /* Charts */
+  --chart-1: #9457eb;
+  --chart-2: #00b87a;
+  --chart-3: #f7b928;
+  --chart-4: #17bf63;
+  --chart-5: #e0245e;
+
+  /* Shadow / radius / fonts */
+  --radius: 1.3rem;
+  --shadow-blur: 0px;
+  --shadow-color: rgba(148, 87, 235, 0.15);
+  --shadow-spread: 0px;
+  --shadow-opacity: 0;
+  --shadow-offset-x: 0px;
+  --shadow-offset-y: 2px;
+  --font-mono: Menlo, monospace;
+  --font-sans: "Open Sans", sans-serif;
+  --font-serif: Georgia, serif;
+
+  /* Frosted glass tint */
+  --glass-bg: rgba(255, 255, 255, 0.5);
+  --glass-border: rgba(0, 0, 0, 0.08);
+}
+
+/* ============================================
+   DARK MODE — pitch black
+   ============================================ */
+.dark {
+  /* Base surfaces */
+  --background: #000000;
+  --surface: #0d0d0d;
+  --surface-elevated: #1a1a1a;
+  --card: #0d0d0d;
+  --popover: #0a0a0a;
+  --sidebar: #0d0d0d;
+  --input: #1a1a1a;
+
+  /* Text */
+  --foreground: #ffffff;
+  --foreground-muted: #a0a0a0;
+  --foreground-subtle: #707070;
+  --muted-foreground: #a0a0a0;
+  --card-foreground: #ffffff;
+  --popover-foreground: #ffffff;
+  --sidebar-foreground: #ffffff;
+
+  /* Borders */
+  --border: #262626;
+  --border-strong: #404040;
+  --sidebar-border: #262626;
+
+  /* Brand accent — unified, same hue as light */
+  --primary: #9457eb;
+  --primary-foreground: #ffffff;
+  --accent: #9457eb;
+  --accent-foreground: #ffffff;
+  --accent-soft: rgba(148, 87, 235, 0.18);
+  --accent-secondary: #466FFF;
+  --ring: #9457eb;
+  --sidebar-ring: #9457eb;
+  --sidebar-primary: #9457eb;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #9457eb;
+  --sidebar-accent-foreground: #ffffff;
+
+  /* Muted */
+  --muted: #1a1a1a;
+
+  /* Semantic */
+  --secondary: #f0f3f4;
+  --secondary-foreground: #0f1419;
+  --destructive: #f4212e;
+  --destructive-foreground: #ffffff;
+
+  /* Charts */
+  --chart-1: #b946ff;
+  --chart-2: #00b87a;
+  --chart-3: #f7b928;
+  --chart-4: #17bf63;
+  --chart-5: #e0245e;
+
+  /* Shadow */
+  --shadow-color: rgba(185, 70, 255, 0.25);
+
+  /* Frosted glass — DARK tint with white text */
+  --glass-bg: rgba(20, 20, 20, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+/* ============================================
+   THEME MAPPING (Tailwind utilities)
+   ============================================ */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-foreground-subtle: var(--foreground-subtle);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-ring: var(--ring);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-serif: var(--font-serif);
+}
+
+/* ============================================
+   BASE
+   ============================================ */
+html {
+  background-color: var(--background);
+  color: var(--foreground);
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: "Open Sans", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+main {
+  position: relative;
+  z-index: 2;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+.font-display {
+  font-family: var(--font-geist-sans), "Open Sans", system-ui, sans-serif;
+  font-feature-settings: "ss01", "ss02", "cv11";
+  letter-spacing: -0.04em;
+}
+
+.text-mega {
+  font-size: clamp(2rem, 8vw, 5.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  font-weight: 600;
+}
+
+.text-display {
+  font-size: clamp(1.875rem, 5vw, 3.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+@keyframes brand-gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-fade-in-up { animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-fade-in    { animation: fade-in 1s ease-out both; }
+.animate-marquee    { animation: marquee 32s linear infinite; }
+.animate-float      { animation: float 6s ease-in-out infinite; }
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+/* ============================================
+   BRAND GRADIENT (from logo: #B946FF → #466FFF)
+   ============================================ */
+.bg-brand-gradient {
+  background: linear-gradient(135deg, #B946FF 0%, #466FFF 100%);
+}
+
+.bg-brand-gradient-animated {
+  background: linear-gradient(135deg, #B946FF 0%, #466FFF 50%, #B946FF 100%);
+  background-size: 200% 200%;
+  animation: brand-gradient-shift 6s ease infinite;
+}
+
+.text-brand-gradient {
+  background: linear-gradient(135deg, #B946FF 0%, #466FFF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.border-brand-gradient {
+  border-image: linear-gradient(135deg, #B946FF 0%, #466FFF 100%) 1;
+}
+
+/* Legacy gradient classes — now all use brand colors */
+.gradient-orange,
+.gradient-lime,
+.gradient-cool {
+  background: linear-gradient(135deg, #B946FF 0%, #466FFF 100%);
+}
+
+.gradient-radial {
+  background-image:
+    radial-gradient(circle at top right, rgba(185, 70, 255, 0.12), transparent 50%),
+    radial-gradient(circle at bottom left, rgba(70, 111, 255, 0.10), transparent 50%);
+}
+
+/* ============================================
+   GRID PATTERN (mode-aware)
+   ============================================ */
+.grid-pattern {
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+}
+
+.dark .grid-pattern {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+/* ============================================
+   FROSTED GLASS
+   ============================================ */
+.glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.dark .glass {
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* Stronger frosted glass — used for the profile card so it visibly
+   "sits on top of" the photo rather than blending into the page bg. */
+.glass-strong {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(40px) saturate(200%);
+  -webkit-backdrop-filter: blur(40px) saturate(200%);
+  box-shadow:
+    0 24px 60px -12px rgba(15, 20, 25, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+.dark .glass-strong {
+  background: rgba(20, 20, 22, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  box-shadow:
+    0 24px 70px -10px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================
+   AI LOADER — "Loading Portfolio"
+   ============================================ */
+.loader-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 2.5rem;
+  border-radius: 999px;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--foreground);
+  background: transparent;
+  isolation: isolate;
+}
+
+.loader-letter {
+  display: inline-block;
+  opacity: 0.4;
+  animation: loader-letter-anim 2.2s infinite ease-in-out;
+  will-change: opacity, transform;
+}
+
+.loader {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  animation: loader-rotate 3s infinite linear;
+}
+
+@keyframes loader-rotate {
+  0% {
+    transform: rotate(90deg);
+    box-shadow:
+      0 10px 20px 0 #fff inset,
+      0 20px 30px 0 #ad5fff inset,
+      0 60px 60px 0 #471eec inset;
+  }
+  50% {
+    transform: rotate(270deg);
+    box-shadow:
+      0 10px 20px 0 #fff inset,
+      0 20px 10px 0 #d60a47 inset,
+      0 40px 60px 0 #311e80 inset;
+  }
+  100% {
+    transform: rotate(450deg);
+    box-shadow:
+      0 10px 20px 0 #fff inset,
+      0 20px 30px 0 #ad5fff inset,
+      0 60px 60px 0 #471eec inset;
+  }
+}
+
+@keyframes loader-letter-anim {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: translateY(0);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+  40% {
+    opacity: 0.7;
+    transform: translateY(0);
+  }
+}
+
+.shimmer-text {
+  background: linear-gradient(110deg, var(--foreground-muted) 35%, var(--foreground) 50%, var(--foreground-muted) 65%);
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+.hover-lift {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { scrollbar-width: none; }
