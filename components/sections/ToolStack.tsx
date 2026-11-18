@@ -39,7 +39,7 @@ const tools: { category: string; items: ToolItem[] }[] = [
       },
       {
         name: "Claude",
-        description: "Coding and iteration",
+        description: "Daily coding agent, in Cursor and Claude Code",
         Icon: ClaudeIcon,
       },
     ],

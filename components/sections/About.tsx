@@ -2,7 +2,7 @@ import { Quote } from "lucide-react";
 
 export function About() {
   return (
-    <section id="about" className="relative border-b border-border">
+    <section id="about" className="relative scroll-mt-24 border-b border-border">
       <div
         className="absolute right-0 top-0 h-96 w-96 rounded-full bg-accent/10 blur-3xl"
         aria-hidden
@@ -26,7 +26,7 @@ export function About() {
                       Proloy Karmakar
                     </div>
                     <div className="text-sm text-foreground-muted">
-                      Product Designer, Kolkata
+                      UX Engineer, Kolkata
                     </div>
                   </div>
                 </div>
@@ -43,7 +43,7 @@ export function About() {
                       Focus
                     </div>
                     <div className="mt-1.5 font-medium text-foreground">
-                      Enterprise UX
+                      Design and front end
                     </div>
                   </div>
                   <div>
@@ -59,7 +59,7 @@ export function About() {
                       Open to
                     </div>
                     <div className="mt-1.5 font-medium text-foreground">
-                      Senior PD roles
+                      UX engineer roles
                     </div>
                   </div>
                 </div>
@@ -69,30 +69,34 @@ export function About() {
 
           <div className="lg:col-span-7">
             <h2 className="font-display text-display text-balance text-foreground">
-              Turning complex systems into{" "}
-              <span className="text-accent">usable experiences.</span>
+              I design it,{" "}
+              <span className="text-accent">then I build it.</span>
             </h2>
 
             <div className="mt-12 space-y-6 text-pretty text-foreground-muted lg:text-xl">
               <p>
-                I am a product designer based in Kolkata, with 4+ years
-                building scalable, accessible systems in B2B SaaS and
-                enterprise software. My work sits at the intersection of
-                usability, accessibility, and scalability.
+                I&apos;m a product designer in Kolkata with four years in B2B
+                and retail software. For the last part of that I have also
+                been writing the front end of what I design.
               </p>
               <p>
-                Whether I am translating retail operations into mobile
-                workflows, simplifying warehouse management for one handed
-                use, or making AI and ML outputs interpretable for domain
-                experts, the common thread is making the invisible visible.
+                On Ginesys Insights, a report builder, I designed the product
+                and built the entire interface in Next.js. I send my changes
+                as pull requests like any engineer on the team. That removed
+                the back and forth between design and development: nobody
+                rebuilds my screens from Figma, and I go to the developers
+                when I need their advice on the backend or an approach.
               </p>
               <p>
-                I started in design agencies on consumer apps, healthcare,
-                and internal tools, where I learned to design across very
-                different industries and constraints. Today I am deeply
-                embedded in operational enterprise systems at Capital
-                Numbers, owning end to end UX for one of India&apos;s largest
-                retail POS and ERP platforms.
+                I build with AI coding agents. Claude is my daily driver,
+                in Cursor and Claude Code, and for larger changes I split
+                the work across several agents. I review what they write,
+                because I&apos;m the one who answers for it.
+              </p>
+              <p>
+                I also design the mobile POS and warehouse apps for
+                Ginesys. Before Capital Numbers, I designed consumer,
+                healthcare and internal tools at Cloudcraftz.
               </p>
             </div>
 
@@ -102,11 +106,12 @@ export function About() {
                 strokeWidth={2.25}
               />
               <blockquote className="text-balance font-display text-lg font-medium leading-snug text-foreground lg:text-2xl">
-                Great design is not about pretty pixels. It is about making
-                life easier for the people who use the product.
+                Since I started shipping my own front end, I spend less
+                time making designs pretty and more on whether they work,
+                and whether the feature is needed at all.
               </blockquote>
               <figcaption className="mt-5 text-sm text-foreground-muted font-mono uppercase tracking-[0.18em]">
-                A working principle
+                How I work now
               </figcaption>
             </figure>
           </div>

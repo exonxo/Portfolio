@@ -4,7 +4,6 @@ import "./globals.css";
 import { Header } from "@/components/ui/header-1";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TabProvider } from "@/lib/tab-context";
-import { PageLoader } from "@/components/ui/page-loader";
 import { MobileTabBar } from "@/components/ui/mobile-tab-bar";
 
 const geistSans = Geist({
@@ -20,7 +19,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Proloy Karmakar | Product Designer",
   description:
-    "Product Designer specializing in enterprise workflows for retail, supply chain, and operational software. Translating operational complexity into scalable, usable systems.",
+    "Product designer in Kolkata. Mobile POS, warehouse and reporting tools for Ginesys One, a retail ERP used across India.",
   keywords: [
     "UX Designer",
     "Product Designer",
@@ -49,7 +48,6 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        <PageLoader />
         <ThemeProvider>
           <TabProvider>
             <Header />

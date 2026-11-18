@@ -477,3 +477,80 @@ main {
 
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 .scrollbar-hide { scrollbar-width: none; }
+
+/* ============================================
+   Reduced motion: honour the visitor's setting
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================
+   Print (used by /cv): plain black on white, no site chrome
+   ============================================ */
+@media print {
+  :root,
+  .dark {
+    --background: #ffffff;
+    --surface: #ffffff;
+    --foreground: #000000;
+    --foreground-muted: #222222;
+    --foreground-subtle: #444444;
+    --border: #bbbbbb;
+    --accent: #000000;
+  }
+  header,
+  footer,
+  .print-hidden {
+    display: none !important;
+  }
+  main {
+    padding-top: 0 !important;
+  }
+  a {
+    text-decoration: none !important;
+  }
+  html,
+  body {
+    background: #ffffff !important;
+  }
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+  .cv-page .text-sm {
+    font-size: inherit;
+  }
+  /* Keep the CV on one A4 page. */
+  .cv-page {
+    padding: 0 !important;
+    max-width: none !important;
+    font-size: 9.5pt;
+    line-height: 1.38;
+  }
+  .cv-page h1 {
+    font-size: 18pt;
+  }
+  .cv-page h2 {
+    margin-top: 10pt !important;
+    margin-bottom: 4pt !important;
+  }
+  .cv-page ul > li + li,
+  .cv-page .space-y-6 > * + * {
+    margin-top: 2pt !important;
+  }
+  .cv-page .space-y-6 > * + * {
+    margin-top: 7pt !important;
+  }
+  @page {
+    margin: 12mm 14mm;
+  }
+}

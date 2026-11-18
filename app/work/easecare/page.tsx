@@ -3,7 +3,8 @@ import { CaseSection, HighlightList, PullQuote } from "@/components/case-study/S
 import { NextCase } from "@/components/case-study/NextCase";
 import { Footer } from "@/components/sections/Footer";
 import { getCaseStudy } from "@/content/caseStudies";
-import { Compass, Lightbulb, LayoutGrid, Activity } from "lucide-react";
+import { FlowFigure } from "@/components/case-study/FlowFigure";
+import { Compass, Lightbulb, LayoutGrid, Activity, Code2 } from "lucide-react";
 
 export const metadata = {
   title: "EaseCare Case Study | Proloy Karmakar",
@@ -98,6 +99,32 @@ export default function EaseCareCaseStudy() {
             "Payment, ratings, and dispute resolution surfaced contextually at the right moment in the journey",
           ]}
         />
+        <FlowFigure
+          src="/case-studies/easecare/booking-flow.jpg"
+          width={2200}
+          height={1100}
+          alt="Four EaseCare screens: the home page with care categories, the Elder Care service list with prices, and the first two questions of posting a care request."
+          caption="From the home page to posting a request, captured from the app's code"
+        />
+      </CaseSection>
+
+      <CaseSection
+        eyebrow="Building it"
+        title="From Figma Make to Claude Code."
+        icon={Code2}
+      >
+        <p>
+          I built the front end of both apps myself, consumer and provider.
+          The work started in Figma Make with Claude Opus, which was quick for
+          getting screens working. Once the apps outgrew that, I moved the
+          code to Claude Code and carried on there. The product owner built
+          the backend, and the team then connected it to my front end.
+        </p>
+        <p>
+          It is React and Vite with Tailwind, Radix and MUI components, and
+          Capacitor to package it for phones. The screenshots on this page are
+          from that code, running in its offline demo mode.
+        </p>
       </CaseSection>
 
       <CaseSection
