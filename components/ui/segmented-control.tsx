@@ -5,8 +5,8 @@ import { cn } from "@/lib/utils";
 import { TabId, useTab } from "@/lib/tab-context";
 
 const tabs: { id: TabId; label: string }[] = [
+  { id: "work", label: "Work" },
   { id: "about", label: "About" },
-  { id: "portfolio", label: "Portfolio" },
 ];
 
 interface SegmentedControlProps {
@@ -28,8 +28,8 @@ export function SegmentedControl({
 
   return (
     <div
-      role="tablist"
-      aria-label="Site sections"
+      role="navigation"
+      aria-label="Jump to section"
       className={cn(
         "relative inline-flex items-center rounded-full border border-border bg-background/60 supports-[backdrop-filter]:bg-background/40 backdrop-blur-lg p-1 shadow-sm",
         className,
@@ -40,9 +40,8 @@ export function SegmentedControl({
         return (
           <button
             key={tab.id}
-            role="tab"
-            aria-selected={isActive}
-            aria-controls={`panel-${tab.id}`}
+            type="button"
+            aria-current={isActive ? "true" : undefined}
             onClick={() => setActiveTab(tab.id)}
             className={cn(
               "relative z-10 px-5 py-1.5 text-sm font-medium rounded-full transition-colors duration-300",
@@ -54,12 +53,7 @@ export function SegmentedControl({
               <motion.span
                 layoutId={layoutId}
                 className="bg-brand-gradient absolute inset-0 -z-10 rounded-full shadow-md"
-                transition={{
-                  type: "spring",
-                  stiffness: 380,
-                  damping: 28,
-                  mass: 0.9,
-                }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
                 style={{ transformOrigin: "center" }}
               />
             )}

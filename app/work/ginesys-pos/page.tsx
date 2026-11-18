@@ -6,13 +6,19 @@ import {
 } from "@/components/case-study/Section";
 import { ScreenSlot, ScreenGrid } from "@/components/case-study/ScreenSlot";
 import { NextCase } from "@/components/case-study/NextCase";
-import { CinematicFooter } from "@/components/ui/motion-footer";
+import { Footer } from "@/components/sections/Footer";
+import { FlowFigure } from "@/components/case-study/FlowFigure";
 import { getCaseStudy } from "@/content/caseStudies";
 import {
   Compass,
   Layers,
   ScanLine,
   ShieldAlert,
+  Hand,
+  ListChecks,
+  CreditCard,
+  FileText,
+  Search,
   Target,
   TrendingUp,
   Wifi,
@@ -154,6 +160,161 @@ export default function GinesysPosCaseStudy() {
         </p>
       </CaseSection>
 
+      {/* ─── Scanning (from the Figma developer notes) ─── */}
+      <CaseSection
+        eyebrow="Scanning"
+        title="A cashier with a phone in one hand."
+        icon={Hand}
+      >
+        <p>
+          A counter terminal has a keyboard, a scanner and a person who sits at
+          it all day. Quebuster is used standing up, in a crowded shop, by
+          someone holding a phone and often a garment. That shaped most of the
+          small decisions.
+        </p>
+        <p>
+          Scanning takes no tap. Holding a barcode in front of the camera adds
+          the item, the phone beeps, and a short message names what was added.
+          The cashier never has to look at the screen to know a scan landed.
+        </p>
+        <p>
+          When scanning is finished, &ldquo;Done&rdquo; appears exactly where
+          &ldquo;Scan&rdquo; was. I wrote this into the build notes as a rule:
+          swap the label and the action, keep the position and the styling. A
+          button that moves between two states of the same screen is a button
+          people miss with their thumb.
+        </p>
+        <FlowFigure
+          src="/case-studies/ginesys-pos/scan-item-flow.jpg"
+          width={1590}
+          height={510}
+          alt="The scan item flow: empty cart, scanner, a scanned item with its price options, assigning a sales person, the scanned items list and the delete confirmation."
+          caption="The scan flow, from the Figma file"
+        />
+      </CaseSection>
+
+      {/* ─── Policy ─── */}
+      <CaseSection
+        eyebrow="Retailer policy"
+        title="One app, many rule books."
+        icon={ListChecks}
+      >
+        <p>
+          Every retailer on Ginesys configures its own billing policy, and the
+          app has to follow it without the cashier thinking about policy at
+          all.
+        </p>
+        <p>
+          Customer tagging is the clearest case. Some retailers want the
+          customer identified before the first item is scanned. Others let the
+          cashier start scanning and only insist on a customer before the bill
+          closes. I designed both as one flow with two entry points, and
+          described it to engineering as a soft requirement at the start and a
+          hard requirement at the end.
+        </p>
+        <FlowFigure
+          src="/case-studies/ginesys-pos/customer-tagging-flow.jpg"
+          width={1590}
+          height={570}
+          alt="Customer tagging before scanning: the prompt to tag a customer, search by phone number, no results found, and the add new customer form with the number already filled in."
+          caption="Tagging a customer before the first scan, with my note to engineering at top right"
+        />
+        <p>
+          The same thinking applies to controls. If a retailer&apos;s policy
+          does not allow price edits, the Edit Pricing option is not shown at
+          all. I asked for it to be left out of the screen, not greyed out. A
+          disabled control on a phone takes up space and invites a question the
+          cashier can&apos;t answer.
+        </p>
+        <p>
+          To tag a customer, the cashier types a phone number and searches. If
+          nobody matches, they add a new customer, and the number they just
+          typed is already filled in. It is a small thing that matters when
+          there is a queue behind the customer.
+        </p>
+        <HighlightList
+          items={[
+            "One item, several prices: when the same item is in stock at more than one price, the cashier picks the price before it goes into the cart",
+            "Batch and serial numbers: scanning one opens a sheet with the batch or serial, expiry and quantity, so the right unit is billed",
+            "Negative stock: an item whose stock is below zero is refused at scan",
+            "Clearing a customer also empties the cart, so the app asks first, with both buttons given equal weight so the design doesn't push the cashier either way",
+            "Settings are visible to everyone and editable only by an admin",
+          ]}
+        />
+      </CaseSection>
+
+      {/* ─── Payment ─── */}
+      <CaseSection
+        eyebrow="Payment"
+        title="Taking payment without a counter."
+        icon={CreditCard}
+      >
+        <p>
+          The cashier can take payment where they stand: a UPI QR code on the
+          phone or on a connected payment machine, a payment link sent by SMS
+          and email, card through a connected card machine, cash, or a credit
+          note. A bill can be put on hold and picked up again from the action
+          menu.
+        </p>
+        <p>
+          Coupons and loyalty discounts belong to a third-party system. They
+          open inside the app and hand the result back to the bill. In my notes
+          I listed the cases engineering had to handle: the cashier closes the
+          screen halfway, the third party times out, or a coupon is removed and
+          applied again.
+        </p>
+      </CaseSection>
+
+      {/* ─── Item Enquiry ─── */}
+      <CaseSection
+        eyebrow="Item Enquiry"
+        title="Price, stock and offers from one scan."
+        icon={Search}
+      >
+        <p>
+          A later module in the same app, now live in production. A store
+          associate scans a tag and the
+          item opens straight away: price, stock at each stock point, the
+          offers that apply and how it has sold. Speed Search and Enter Code
+          are there for a missing or unreadable tag.
+        </p>
+        <p>
+          Most of the 25 screens are the cases around the happy path: camera
+          permission on the first scan, a barcode that isn&rsquo;t in this
+          store&rsquo;s catalogue, and a lost connection while the item loads.
+          Each one offers a way forward instead of a dead end.
+        </p>
+        <FlowFigure
+          src="/case-studies/ginesys-pos/item-enquiry-flow.jpg"
+          width={2940}
+          height={800}
+          alt="Item Enquiry screens: the home tile, camera permission, the live scanner, the item detail in three states, and the not-in-catalogue and failed-to-load states."
+          caption="Item Enquiry: the scan path and its failure states"
+        />
+      </CaseSection>
+
+      {/* ─── Handoff ─── */}
+      <CaseSection
+        eyebrow="Handoff"
+        title="Notes beside every flow, not a spec somewhere else."
+        icon={FileText}
+      >
+        <p>
+          The Figma file carries the design system (type scale, colour ramps,
+          buttons, sheets) and dated developer notes next to the flows they
+          describe. Each note states a behaviour rule that a screen alone
+          can&apos;t show, such as the action sheet growing and shrinking with
+          its content and scrolling when it runs out of room.
+        </p>
+        <FlowFigure
+          src="/case-studies/ginesys-pos/canvas-overview.jpg"
+          width={1876}
+          height={1175}
+          alt="The full design file zoomed out: a component library on the left and about twenty labelled flows on the right."
+          caption="The whole file. Green labels mark each flow."
+        />
+      </CaseSection>
+
       {/* ─── Edge cases ─── */}
       <CaseSection
         eyebrow="The edges"
@@ -265,6 +426,7 @@ export default function GinesysPosCaseStudy() {
         <HighlightList
           items={[
             "MVP Quebuster shipped Pan-India across Ginesys retail clients in time for festive peak",
+            "In use today at more than 1,000 active retail customers",
             "436 screens designed across 48 modules — every state, every edge case, explicit",
             "68 customer-management screens covering search, add, tag, multi-cart association",
             "Reduced average checkout time at high-volume Quebuster stores by reorienting the scan-first flow",
@@ -304,7 +466,7 @@ export default function GinesysPosCaseStudy() {
       </CaseSection>
 
       <NextCase currentSlug="ginesys-pos" />
-      <CinematicFooter />
+      <Footer />
     </>
   );
 }

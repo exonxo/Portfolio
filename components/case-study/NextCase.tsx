@@ -18,7 +18,7 @@ export function NextCase({ currentSlug }: { currentSlug: string }) {
         >
           <div>
             <div className="text-xs uppercase tracking-[0.16em] text-foreground-subtle">
-              {next.capability}
+              {next.statusLabel} · {next.capability}
             </div>
             <h3 className="mt-3 text-balance text-2xl font-semibold tracking-tight text-foreground lg:text-3xl">
               {next.shortTitle}

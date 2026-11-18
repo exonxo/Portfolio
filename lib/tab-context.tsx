@@ -7,41 +7,84 @@ import React, {
   useEffect,
   useState,
 } from "react";
+import { usePathname } from "next/navigation";
 
-export type TabId = "about" | "portfolio";
+// The home page is one scrolling page. The header switch no longer hides
+// sections; it scrolls to them and highlights whichever one is in view.
+export type TabId = "work" | "about";
 
 interface TabContextValue {
-  activeTab: TabId;
+  /** null when no home page section is in view (e.g. on a case study page). */
+  activeTab: TabId | null;
   setActiveTab: (tab: TabId) => void;
 }
 
 const TabContext = createContext<TabContextValue | undefined>(undefined);
 
-const VALID_TABS: TabId[] = ["about", "portfolio"];
+// Section element ids on the home page.
+const SECTION_ID: Record<TabId, string> = { work: "work", about: "about" };
 
-function readHashTab(): TabId {
-  if (typeof window === "undefined") return "about";
-  const raw = window.location.hash.replace("#", "").toLowerCase();
-  return (VALID_TABS as string[]).includes(raw) ? (raw as TabId) : "about";
+// Old links used #portfolio for the work section.
+const HASH_ALIASES: Record<string, TabId> = {
+  work: "work",
+  portfolio: "work",
+  about: "about",
+};
+
+function scrollToSection(tab: TabId) {
+  const el = document.getElementById(SECTION_ID[tab]);
+  if (!el) {
+    // Not on the home page: go there.
+    window.location.href = `/#${SECTION_ID[tab]}`;
+    return;
+  }
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
 }
 
 export function TabProvider({ children }: { children: React.ReactNode }) {
-  const [activeTab, setActiveTabState] = useState<TabId>("about");
+  const [activeTab, setActiveTabState] = useState<TabId | null>(null);
+  const pathname = usePathname();
 
-  // Sync from URL hash on mount and when it changes
+  // Honour an incoming hash (including the old #portfolio) once on load.
   useEffect(() => {
-    const sync = () => setActiveTabState(readHashTab());
-    sync();
-    window.addEventListener("hashchange", sync);
-    return () => window.removeEventListener("hashchange", sync);
+    const tab = HASH_ALIASES[window.location.hash.replace("#", "").toLowerCase()];
+    if (tab) {
+      // Let the page lay out first. A timer, not requestAnimationFrame,
+      // because background tabs may not deliver animation frames.
+      const t = window.setTimeout(() => scrollToSection(tab), 60);
+      return () => window.clearTimeout(t);
+    }
   }, []);
+
+  // Highlight the section currently in view.
+  useEffect(() => {
+    const els = (Object.keys(SECTION_ID) as TabId[])
+      .map((t) => [t, document.getElementById(SECTION_ID[t])] as const)
+      .filter(([, el]) => el) as [TabId, HTMLElement][];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          const hit = els.find(([, el]) => el === entry.target);
+          if (!hit) continue;
+          if (entry.isIntersecting) setActiveTabState(hit[0]);
+          else setActiveTabState((cur) => (cur === hit[0] ? null : cur));
+        }
+      },
+      { rootMargin: "-45% 0px -50% 0px" },
+    );
+    els.forEach(([, el]) => observer.observe(el));
+    return () => {
+      observer.disconnect();
+      // Leaving the page clears the highlight.
+      setActiveTabState(null);
+    };
+  }, [pathname]);
 
   const setActiveTab = useCallback((tab: TabId) => {
     setActiveTabState(tab);
-    if (typeof window !== "undefined") {
-      const newUrl = `${window.location.pathname}#${tab}`;
-      window.history.replaceState(null, "", newUrl);
-    }
+    scrollToSection(tab);
+    window.history.replaceState(null, "", `/#${SECTION_ID[tab]}`);
   }, []);
 
   return (

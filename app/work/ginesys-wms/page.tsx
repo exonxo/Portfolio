@@ -3,6 +3,8 @@ import { CaseSection, HighlightList, PullQuote } from "@/components/case-study/S
 import { NextCase } from "@/components/case-study/NextCase";
 import { Footer } from "@/components/sections/Footer";
 import { getCaseStudy } from "@/content/caseStudies";
+import { FlowFigure } from "@/components/case-study/FlowFigure";
+
 import { Compass, Lightbulb, ScanLine, LayoutGrid, Activity, ExternalLink } from "lucide-react";
 
 export const metadata = {
@@ -90,6 +92,20 @@ export default function GinesysWmsCaseStudy() {
             "Continuous scanning without dialog interruptions between items",
             "Success and error states surface inside the viewfinder, not as separate modals",
           ]}
+        />
+        <FlowFigure
+          src="/case-studies/ginesys-wms/adhoc-scanning.jpg"
+          width={1890}
+          height={1181}
+          alt="Delivery Challan in Adhoc mode: an empty list waiting for the first scan, the scanner open as a sheet, then the scanned items list with batch and serial tags and Save and Print enabled."
+          caption="Delivery Challan, Adhoc mode: before, during and after scanning"
+        />
+        <FlowFigure
+          src="/case-studies/ginesys-wms/adhoc-flow.jpg"
+          width={3938}
+          height={473}
+          alt="The full Adhoc delivery flow, from the home tile to the challan created screen, including the discard, batch, serial and error states."
+          caption="The whole Adhoc delivery flow, from the Figma file"
         />
       </CaseSection>
 

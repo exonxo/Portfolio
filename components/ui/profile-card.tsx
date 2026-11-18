@@ -65,8 +65,8 @@ export interface ProfileCardProps {
 export function ProfileCard(props: ProfileCardProps) {
   const {
     name = "Proloy Karmakar",
-    title = "Product Designer | Enterprise UX Specialist",
-    description = "Proloy is a product designer with 4+ years building enterprise software for retail, supply chain, and healthcare. He specializes in translating operational complexity into scalable, usable systems at Pan-India scale.",
+    title = "UX Engineer | Product Designer who ships front end",
+    description = "Product designer with four years in retail and B2B software. Designs mobile POS, warehouse and reporting tools for Ginesys One, and builds the front end himself in Next.js and React.",
     imageUrl = "https://caerngsicqdfqubm.public.blob.vercel-storage.com/proloy-profile.png",
     githubUrl = "https://github.com/exonxo",
     twitterUrl = "https://twitter.com/proloyoncloud",

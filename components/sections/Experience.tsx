@@ -14,23 +14,28 @@ type Role = {
 const roles: Role[] = [
   {
     company: "Capital Numbers",
-    title: "UX Designer",
+    title: "UX/Product Designer",
     period: "Jul 2024 to Present",
     location: "Kolkata, India",
     focus:
       "Independent contributor for Ginesys One ERP and POS, owning end to end UX for POS Mobile and ERP Web platforms.",
     highlights: [
-      "Lead design audits, define UX standards, and mentor designers",
-      "Shipped MVP Quebuster, deployed Pan-India for real world retail scale",
+      "Shipped the Quebuster mobile POS MVP, now in use at 1,000+ retailers across India",
       "Lead the mPOS design stream, balancing UX with engineering feasibility",
-      "Translate complex business rules and system constraints into scalable interfaces",
+      "Designed and built the entire front end of Ginesys Insights, a report builder, in Next.js; I keep improving it through pull requests",
+      "Ran customer research with five retail reporting teams before building the new report builder",
+      "Lead design audits, define UX standards, and mentor designers",
+      "Earlier client work: Dark Yeti brand and WCAG-compliant website, PictureYOU iOS booking flows, and dashboards for AI/ML proofs of concept (machine fault detection, X-ray diagnostics)",
     ],
     domains: [
       "Retail billing",
       "Inventory",
+      "Reporting",
+      "Next.js and React",
       "POS Mobile",
       "ERP Web",
-      "Design systems",
+      "AI/ML interfaces",
+      "Accessibility",
     ],
     current: true,
   },
@@ -45,17 +50,8 @@ const roles: Role[] = [
       "QOMIX: mobile experience and CMS design for a comic reading platform",
       "ALYF: mobile healthcare suite for iOS and Web, partnered with founders",
       "TalentSPOT: built an internal ATS from research to handoff",
-      "Dark Yeti: brand identity and website design with WCAG compliance",
-      "PictureYOU iOS: restructured discovery, shortlisting, and booking flows",
-      "AI/ML POCs: dashboards for industrial fault detection and X-ray diagnostics",
     ],
-    domains: [
-      "Healthcare",
-      "Consumer apps",
-      "AI/ML interfaces",
-      "Accessibility",
-      "Brand and web",
-    ],
+    domains: ["Healthcare", "Consumer apps", "Internal tools", "CMS"],
   },
 ];
 
@@ -91,7 +87,7 @@ export function Experience() {
             >
               {role.current && (
                 <div className="absolute right-6 top-6 z-10 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-[10px] uppercase tracking-[0.22em] text-emerald-400 font-mono">
-                  <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400" />
                   Currently
                 </div>
               )}

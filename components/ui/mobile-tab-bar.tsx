@@ -12,7 +12,7 @@ import { SegmentedControl } from "@/components/ui/segmented-control";
 export function MobileTabBar() {
   return (
     <div
-      className="fixed bottom-4 inset-x-0 z-[55] flex justify-center px-4 lg:hidden pointer-events-none"
+      className="print-hidden fixed bottom-4 inset-x-0 z-[55] flex justify-center px-4 lg:hidden pointer-events-none"
       style={{
         // Respect the iOS safe area so the pill clears the home indicator.
         paddingBottom: "max(0px, env(safe-area-inset-bottom))",
