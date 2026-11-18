@@ -82,12 +82,12 @@ export const caseStudies: CaseStudy[] = [
     shortTitle: "Reports and Insights 2.0",
     capability: "Research, design and front end",
     summary:
-      "Customers were unhappy with the report builder, so I spent two weeks with five of them. The interface turned out to be the complaint they cared about least. That changed what we built.",
+      "Customers were unhappy with the report builder, so I spent two weeks with several of them. The interface turned out to be the complaint they cared about least. That changed what we built.",
     description:
-      "Customer research with five retail reporting teams, then a new report builder for Ginesys One that I designed and built the front end of.",
+      "Customer research with multiple retail reporting teams, then a new report builder for Ginesys One that I designed and built the front end of.",
     role: "Product Designer and front-end developer",
     timeline: "2026",
-    team: "Product owner, CXO, five customer reporting teams",
+    team: "Product owner, CXO, customer reporting teams",
     industry: "Retail ERP, reporting and MIS",
     status: "in-progress",
     statusLabel: "Designed and built · In pilot",
@@ -96,14 +96,14 @@ export const caseStudies: CaseStudy[] = [
       problem:
         "Customers of Ginesys One were complaining about the report builder. The working assumption was that it needed a new interface.",
       myRole:
-        "Designer on the module, working with the product owner and a CXO. I ran five customer sessions in August 2026, two on site and three by call, and I built the entire front end myself in Next.js.",
+        "Designer on the module, working with the product owner and a CXO. I ran customer sessions in August 2026, on site and by call, and I built the entire front end myself in Next.js.",
       whatIDid:
         "Found that the people who build reports would put up with a clumsy interface if the numbers were right and arrived on time, and that several of the worst problems had nothing to do with design.",
       whereItStands:
         "One customer saw it, called it better than their current tool and asked to trial it. It is now in pilot testing with users and is planned to go live in February 2027. I keep improving the front end through pull requests.",
     },
     metrics: [
-      { value: "5", label: "Customer reporting teams" },
+      { value: "Next.js", label: "Front end I built myself" },
       { value: "2 weeks", label: "Of sessions, August 2026" },
       { value: "1", label: "Customer asked to trial it, unprompted" },
     ],

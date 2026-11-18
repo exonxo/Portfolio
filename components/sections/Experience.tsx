@@ -23,7 +23,7 @@ const roles: Role[] = [
       "Shipped the Quebuster mobile POS MVP, now in use at 1,000+ retailers across India",
       "Lead the mPOS design stream, balancing UX with engineering feasibility",
       "Designed and built the entire front end of Ginesys Insights, a report builder, in Next.js; I keep improving it through pull requests",
-      "Ran customer research with five retail reporting teams before building the new report builder",
+      "Ran customer research with multiple retail reporting teams before building the new report builder",
       "Lead design audits, define UX standards, and mentor designers",
       "Earlier client work: Dark Yeti brand and WCAG-compliant website, PictureYOU iOS booking flows, and dashboards for AI/ML proofs of concept (machine fault detection, X-ray diagnostics)",
     ],

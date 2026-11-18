@@ -9,7 +9,7 @@ import { Compass, Eye, ListOrdered, Ban, LayoutGrid, MessageSquare, Lightbulb, C
 export const metadata = {
   title: "Reports and Insights 2.0 Case Study | Proloy Karmakar",
   description:
-    "Customer research with five retail reporting teams, and a coded prototype of a new report builder for Ginesys One.",
+    "Customer research with multiple retail reporting teams, and a new report builder for Ginesys One that I designed and built the front end of.",
 };
 
 // Customer and people names are deliberately left out: the visit records are
@@ -22,10 +22,10 @@ export default function ReportsInsightsCaseStudy() {
     <>
       <CaseStudyHero caseStudy={caseStudy} />
 
-      <CaseSection eyebrow="The setup" title="Five customers, two weeks." icon={Compass}>
+      <CaseSection eyebrow="The setup" title="Several customers, two weeks." icon={Compass}>
         <p>
-          I spoke to reporting teams at five retailers between 11 and 20 August
-          2026, two at their offices and three by call. They were not a tidy
+          I spoke to reporting teams at several retailers between 11 and 20 August
+          2026, some at their offices and some by call. They were not a tidy
           sample. One had stopped using our reports altogether and was running
           the business off POS data. One was technical enough to patch around
           the product and ran a separate BI tool beside it. One contact had
@@ -76,7 +76,7 @@ export default function ReportsInsightsCaseStudy() {
           </li>
           <li>
             <strong className="text-foreground">Two modules in one report.</strong>{" "}
-            Three of the five could not combine data such as sales with stock,
+            Most of them could not combine data such as sales with stock,
             or inventory with finance, and did it in Excel.
           </li>
           <li>
@@ -183,7 +183,7 @@ export default function ReportsInsightsCaseStudy() {
           of scope, and those were often the important ones.
         </p>
         <p>
-          The limits are plain: five accounts, one researcher, no usage data.
+          The limits are plain: a handful of accounts, one researcher, no usage data.
           At one account everything was described to me rather than shown, so
           those defects still need reproducing before anyone acts on them.
         </p>
