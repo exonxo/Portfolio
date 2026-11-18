@@ -179,6 +179,41 @@ export const caseStudies: CaseStudy[] = [
     ],
     href: "/work/easecare",
   },
+  {
+    slug: "playbawaal",
+    image: "/case-studies/playbawaal/home.jpg",
+    imageAlt: "The BAWAAL home page: a yellow comic-style hero reading Ghar mein sab hain? Toh BAWAAL karo! with Start a Bawaal and Explore games buttons",
+    title: "BAWAAL: Desi party games for the whole family",
+    shortTitle: "BAWAAL",
+    capability: "Personal project, designed and built solo",
+    summary:
+      "At Diwali my cousins were all home and all on their phones. So I built party games where the TV is the board and every phone is a controller.",
+    description:
+      "A personal project: 13 desi party games played on one big screen, with everyone joining from their phones. I designed it and built the front end, realtime layer and database myself.",
+    role: "Designer and developer, solo",
+    timeline: "November 2026",
+    team: "Just me, with Claude Code and Cursor agents",
+    industry: "Consumer, games, family",
+    status: "shipped",
+    statusLabel: "Personal project · Live",
+    year: "2026",
+    brief: {
+      problem:
+        "During Diwali the whole family was home, but most of my cousins were on their own phones. I wanted something everyone could play together in one room.",
+      myRole:
+        "Everything: the idea, the design, the Next.js front end, the Supabase realtime and database setup, testing and deployment.",
+      whatIDid:
+        "Built party games where a TV or laptop is the board and everyone joins from their phone with a 4-letter code. No app to install and no account for players; only the host signs in.",
+      whereItStands:
+        "Live at playbawaal.vercel.app with 13 games, and open on GitHub.",
+    },
+    metrics: [
+      { value: "13", label: "Party games" },
+      { value: "0", label: "Apps to install for players" },
+      { value: "4 letters", label: "Room code to join" },
+    ],
+    href: "/work/playbawaal",
+  },
 ];
 
 export function getCaseStudy(slug: string): CaseStudy | undefined {
