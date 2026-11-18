@@ -15,7 +15,7 @@ const experience = [
     dates: "July 2024 to present",
     note: "Dedicated to Ginesys One, a retail ERP and POS suite.",
     bullets: [
-      "Designed and built the entire front end of Ginesys Insights, a report builder for retail MIS, in Next.js and React with AG Grid. In pilot testing with users, going live February 2027. I ship improvements through pull requests to the product codebase.",
+      "Designed and built the entire front end of Ginesys Insights, a report builder for retail MIS, in Next.js and React with AG Grid, shipping through pull requests. In pilot with users; goes live February 2027.",
       "Writing the front end myself removed the design-to-development handoff on the module; it did not need a separate front-end engineer. I consult developers on backend and architecture questions.",
       "Ran research with five customer reporting teams before building; one customer asked to trial the new builder.",
       "Designed Quebuster, a mobile POS that lets store staff bill from a phone. Shipped Pan-India and in use at 1,000+ retailers.",
@@ -29,7 +29,7 @@ const experience = [
     dates: "2025 to February 2026",
     note: "",
     bullets: [
-      "Designed EaseCare, a two-sided home care marketplace, and built the front end of both the consumer and provider apps in React, Vite and Tailwind, packaged for mobile with Capacitor. The product owner's backend was integrated with my front end. Live with 12 service categories.",
+      "Designed EaseCare, a two-sided home care marketplace, and built the front end of its consumer and provider apps (React, Vite, Tailwind, Capacitor); the product owner built the backend. Live with 12 service categories.",
     ],
   },
   {
