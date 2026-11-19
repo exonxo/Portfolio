@@ -17,10 +17,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Proloy Karmakar | Product Designer",
+  title: "Proloy Karmakar | UX Engineer and Product Designer",
   description:
-    "Product designer in Kolkata. Mobile POS, warehouse and reporting tools for Ginesys One, a retail ERP used across India.",
+    "UX engineer and product designer in Kolkata. I design retail software for Ginesys One and build the front end myself: a mobile POS used by 1,000+ retailers and the Ginesys Insights report builder.",
   keywords: [
+    "UX Engineer",
     "UX Designer",
     "Product Designer",
     "Enterprise UX",
@@ -30,9 +31,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Proloy Karmakar" }],
   openGraph: {
-    title: "Proloy Karmakar | Product Designer",
+    title: "Proloy Karmakar | UX Engineer and Product Designer",
     description:
-      "Translating operational complexity into scalable, usable systems.",
+      "A product designer who builds the front end of what he designs.",
     type: "website",
   },
 };

@@ -7,7 +7,7 @@ import { FlowFigure } from "@/components/case-study/FlowFigure";
 import { Compass, Eye, ListOrdered, Ban, LayoutGrid, MessageSquare, Lightbulb, Code2 } from "lucide-react";
 
 export const metadata = {
-  title: "Reports and Insights 2.0 Case Study | Proloy Karmakar",
+  title: "Ginesys Insights Case Study | Proloy Karmakar",
   description:
     "Customer research with multiple retail reporting teams, and a new report builder for Ginesys One that I designed and built the front end of.",
 };

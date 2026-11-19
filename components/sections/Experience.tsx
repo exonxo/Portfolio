@@ -18,13 +18,11 @@ const roles: Role[] = [
     period: "Jul 2024 to Present",
     location: "Kolkata, India",
     focus:
-      "Independent contributor for Ginesys One ERP and POS, owning end to end UX for POS Mobile and ERP Web platforms.",
+      "Sole designer on POS Mobile and ERP Web for Ginesys One, owning the UX end to end.",
     highlights: [
       "Shipped the Quebuster mobile POS MVP, now in use at 1,000+ retailers across India",
-      "Lead the mPOS design stream, balancing UX with engineering feasibility",
       "Designed and built the entire front end of Ginesys Insights, a report builder, in Next.js; I keep improving it through pull requests",
-      "Ran customer research with multiple retail reporting teams before building the new report builder",
-      "Lead design audits, define UX standards, and mentor designers",
+      "Lead the mPOS design stream; run design audits, set UX standards and mentor designers",
       "Earlier client work: Dark Yeti brand and WCAG-compliant website, PictureYOU iOS booking flows, and dashboards for AI/ML proofs of concept (machine fault detection, X-ray diagnostics)",
     ],
     domains: [
@@ -58,11 +56,12 @@ const roles: Role[] = [
 export function Experience() {
   return (
     <section id="experience" className="relative border-b border-border">
-      <div className="mx-auto w-full max-w-[1400px] px-6 py-24 lg:px-12 lg:py-32">
+      <div className="mx-auto w-full max-w-[1400px] px-6 py-20 lg:px-12 lg:py-24">
         <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <div className="text-[11px] uppercase tracking-[0.25em] text-foreground-subtle font-mono">
-              Background
+            <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.25em] text-foreground-subtle">
+              <span className="inline-block h-px w-8 bg-accent" />
+              Experience
             </div>
             <h2 className="mt-6 font-display text-display text-balance text-foreground max-w-3xl">
               Agency, to product,
@@ -79,7 +78,7 @@ export function Experience() {
           </div>
         </div>
 
-        <div className="mt-16 space-y-10">
+        <div className="mt-12 space-y-6">
           {roles.map((role, idx) => (
             <article
               key={role.company}
@@ -92,7 +91,7 @@ export function Experience() {
                 </div>
               )}
 
-              <div className="grid gap-8 p-8 lg:grid-cols-12 lg:gap-12 lg:p-12">
+              <div className="grid gap-6 p-6 lg:grid-cols-12 lg:gap-12 lg:p-10">
                 <div className="lg:col-span-4">
                   <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.22em] text-foreground-subtle font-mono">
                     {role.current ? (
@@ -117,7 +116,7 @@ export function Experience() {
                     {role.focus}
                   </p>
 
-                  <ul className="mt-8 space-y-3">
+                  <ul className="mt-6 space-y-2.5">
                     {role.highlights.map((highlight) => (
                       <li
                         key={highlight}
@@ -131,17 +130,6 @@ export function Experience() {
                       </li>
                     ))}
                   </ul>
-
-                  <div className="mt-8 flex flex-wrap gap-2 border-t border-border pt-6">
-                    {role.domains.map((domain) => (
-                      <span
-                        key={domain}
-                        className="rounded-full border border-border-strong bg-background/60 px-3 py-1.5 text-xs text-foreground-muted"
-                      >
-                        {domain}
-                      </span>
-                    ))}
-                  </div>
                 </div>
               </div>
             </article>

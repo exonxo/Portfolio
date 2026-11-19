@@ -48,7 +48,7 @@ export const caseStudies: CaseStudy[] = [
       "A point-of-sale app that runs on a phone, so store staff can bill in the aisle when the counters are backed up. Shipped, and in use at more than 1,000 retailers.",
     description:
       "Owning UX for the mobile POS stream of one of India's largest retail platforms. Translating retail billing, inventory, and operational rules into a fast, scalable mobile experience.",
-    role: "Lead Product Designer for mPOS",
+    role: "UX/Product Designer, leading the mPOS design stream",
     timeline: "2024 to present",
     team: "CTO, business analysts, backend and frontend engineers",
     industry: "Retail, POS, ERP, Pan-India deployment",
@@ -78,8 +78,8 @@ export const caseStudies: CaseStudy[] = [
     slug: "reports-insights",
     image: "/case-studies/reports-insights/builder-table.jpg",
     imageAlt: "The report builder prototype: a field list on the left, rows, columns and filters across the top, and net sales by zone in a table",
-    title: "Reports and Insights 2.0: What report builders actually needed",
-    shortTitle: "Reports and Insights 2.0",
+    title: "Ginesys Insights: What report builders actually needed",
+    shortTitle: "Ginesys Insights",
     capability: "Research, design and front end",
     summary:
       "Customers were unhappy with the report builder, so I spent two weeks with several of them. The interface turned out to be the complaint they cared about least. That changed what we built.",
@@ -120,7 +120,7 @@ export const caseStudies: CaseStudy[] = [
       "A warehouse app that was deployed but barely used. I rebuilt it around one rule: everything has to work with one hand free.",
     description:
       "Rebuilt the Ginesys warehouse management app around a single constraint: warehouse workers need operational clarity, and they need it with one hand free.",
-    role: "Lead Product Designer for mobile WMS",
+    role: "UX/Product Designer, design lead for mobile WMS",
     timeline: "2024 to 2025",
     team: "CTO, business analysts, mobile engineers, warehouse operators",
     industry: "Retail operations, supply chain, warehouse management",

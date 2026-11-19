@@ -41,8 +41,8 @@ export function Hero() {
       <div className="mx-auto flex w-full max-w-[1400px] flex-col gap-6 px-6 py-10 lg:flex-row lg:items-center lg:justify-between lg:px-12">
         <p className="max-w-2xl text-pretty text-base leading-relaxed text-foreground-muted lg:text-lg">
           I design retail software for Ginesys One, a retail ERP used across India, and I build the
-          front end of what I design. On the Ginesys Insights report builder I wrote the whole
-          interface myself, so what customers use is the design, not a rebuild of it.
+          front end myself. I designed the mobile POS now used by more than 1,000 retailers, and I
+          wrote the entire interface of Ginesys Insights, a report builder now in pilot.
         </p>
         <div className="flex shrink-0 flex-wrap gap-3">
           <a

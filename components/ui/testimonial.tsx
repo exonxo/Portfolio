@@ -123,7 +123,7 @@ export default function ClientFeedback({
     <section
       id="testimonials"
       ref={ref}
-      className="relative mx-auto w-full max-w-[1400px] scroll-mt-24 px-6 py-24 lg:px-12 lg:py-32"
+      className="relative mx-auto w-full max-w-[1400px] scroll-mt-24 px-6 py-20 lg:px-12 lg:py-24"
     >
       <div className="max-w-3xl">
         <TimelineContent
@@ -164,11 +164,11 @@ export default function ClientFeedback({
         </div>
         <div className="flex flex-col gap-3">
           {c && <Card t={c} tone="ink" index={2} timelineRef={ref} className="lg:flex-1" />}
-          {d && <Card t={d} tone="ink" index={3} timelineRef={ref} className="lg:flex-1" />}
-          {e && <Card t={e} tone="ink" index={4} timelineRef={ref} className="lg:flex-1" />}
+          {d && <Card t={d} tone="ink" index={3} timelineRef={ref} className="max-lg:hidden lg:flex-1" />}
+          {e && <Card t={e} tone="ink" index={4} timelineRef={ref} className="max-lg:hidden lg:flex-1" />}
         </div>
         <div className="flex flex-col gap-3">
-          {f && <Card t={f} tone="accent" index={5} timelineRef={ref} className="lg:flex-[3]" />}
+          {f && <Card t={f} tone="accent" index={5} timelineRef={ref} className="max-lg:hidden lg:flex-[3]" />}
           {g && <Card t={g} tone="grid" index={6} timelineRef={ref} large className="lg:flex-[7]" />}
         </div>
       </div>

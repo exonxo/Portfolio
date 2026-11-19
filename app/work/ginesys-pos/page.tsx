@@ -55,7 +55,7 @@ export default function GinesysPosCaseStudy() {
           retail load. Often on flaky 3G.
         </p>
         <p>
-          When I joined as the IC leading the mPOS design stream, the existing
+          When I joined as the designer leading the mPOS design stream, the existing
           flow was a literal port of the desktop POS: dense screens, modal-stack
           dialogs, forms with twelve fields visible at once. Associates trained
           for days, made errors anyway, and slowed checkouts during the busiest
@@ -429,12 +429,11 @@ export default function GinesysPosCaseStudy() {
             "In use today at more than 1,000 active retail customers",
             "436 screens designed across 48 modules — every state, every edge case, explicit",
             "68 customer-management screens covering search, add, tag, multi-cart association",
-            "Reduced average checkout time at high-volume Quebuster stores by reorienting the scan-first flow",
             "Established the mPOS design system that the wider ERP team now references for mobile work",
           ]}
         />
         <p className="mt-8">
-          Beyond the metric improvements, the bigger shift was internal:
+          The bigger shift was internal:
           Ginesys now treats mobile as a first-class POS surface, not a
           mini-version of the desktop. The mPOS design system feeds back into
           the ERP web design and has become the team&apos;s shared vocabulary

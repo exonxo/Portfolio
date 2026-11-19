@@ -11,6 +11,7 @@ import {
   StitchIcon,
   VSCodeIcon,
 } from "@/components/ui/tool-icons";
+import { Atom, Code2, Database, GitPullRequest, Table2 } from "lucide-react";
 
 type ToolItem = {
   name: string;
@@ -19,6 +20,36 @@ type ToolItem = {
 };
 
 const tools: { category: string; items: ToolItem[] }[] = [
+  {
+    category: "Front end I ship",
+    items: [
+      {
+        name: "Next.js and React",
+        description: "Production front ends, like Ginesys Insights",
+        Icon: Atom,
+      },
+      {
+        name: "TypeScript and Tailwind CSS",
+        description: "Typed components styled with design tokens",
+        Icon: Code2,
+      },
+      {
+        name: "AG Grid",
+        description: "Data-heavy tables in the report builder",
+        Icon: Table2,
+      },
+      {
+        name: "Supabase",
+        description: "Database, sign-in and realtime for BAWAAL",
+        Icon: Database,
+      },
+      {
+        name: "Git, pull requests, Vercel",
+        description: "How my front-end changes ship",
+        Icon: GitPullRequest,
+      },
+    ],
+  },
   {
     category: "Design Systems",
     items: [
@@ -30,7 +61,7 @@ const tools: { category: string; items: ToolItem[] }[] = [
     ],
   },
   {
-    category: "Frontend & Coding",
+    category: "Editor and coding agents",
     items: [
       {
         name: "VS Code",
@@ -98,18 +129,17 @@ export function ToolStack() {
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl">
             <div className="text-[11px] uppercase tracking-[0.25em] text-foreground-subtle font-mono">
-              Tools & Stack
+              Tools and stack
             </div>
             <h2 className="mt-6 font-display text-display text-balance text-foreground">
-              Built with the tools
+              How I design
               <br />
-              <span className="text-foreground-muted">
-                that make great work possible.
-              </span>
+              <span className="text-foreground-muted">and build.</span>
             </h2>
             <p className="mt-6 max-w-2xl text-pretty text-foreground-muted lg:text-lg">
-              A thoughtfully curated set of design and development tools that
-              enable both exploration and production at scale.
+              Figma for the design, then the production front end in code,
+              shipped through pull requests like the rest of the engineering
+              team.
             </p>
           </div>
         </div>
@@ -129,8 +159,8 @@ export function ToolStack() {
                       className="group relative overflow-hidden rounded-2xl border border-border bg-surface p-6 transition-all duration-500 hover:border-border-strong hover:bg-surface-elevated"
                     >
                       <div className="flex items-start gap-4">
-                        <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-white ring-1 ring-border overflow-hidden">
-                          <Icon className="h-7 w-7" />
+                        <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-white text-[#0f1419] ring-1 ring-border overflow-hidden">
+                          <Icon className="h-7 w-7" strokeWidth={1.75} />
                         </div>
                         <div className="flex-1">
                           <h4 className="font-display text-lg font-semibold text-foreground">
