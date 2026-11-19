@@ -125,14 +125,15 @@ export default function ClientFeedback({
       ref={ref}
       className="relative mx-auto w-full max-w-[1400px] scroll-mt-24 px-6 py-24 lg:px-12 lg:py-32"
     >
-      <div className="mx-auto max-w-3xl space-y-4 text-center">
+      <div className="max-w-3xl">
         <TimelineContent
           as="div"
           animationNum={0}
           customVariants={revealVariants}
           timelineRef={ref}
-          className="font-mono text-[11px] uppercase tracking-[0.25em] text-foreground-subtle"
+          className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.25em] text-foreground-subtle"
         >
+          <span className="inline-block h-px w-8 bg-accent" />
           Kind words
         </TimelineContent>
         <TimelineContent
@@ -140,16 +141,16 @@ export default function ClientFeedback({
           animationNum={1}
           customVariants={revealVariants}
           timelineRef={ref}
-          className="font-display text-3xl font-semibold tracking-tight text-foreground text-balance xl:text-5xl"
+          className="mt-6 font-display text-display text-balance text-foreground"
         >
-          What clients and engineers say about working with me
+          What clients and engineers say
         </TimelineContent>
         <TimelineContent
           as="p"
           animationNum={2}
           customVariants={revealVariants}
           timelineRef={ref}
-          className="mx-auto max-w-xl text-pretty text-foreground-muted"
+          className="mt-6 max-w-2xl text-pretty text-foreground-muted lg:text-lg"
         >
           From recommendations on my LinkedIn, written by the people I designed for and the
           developers who built my designs.
@@ -172,7 +173,7 @@ export default function ClientFeedback({
         </div>
       </div>
 
-      <div className="mt-10 flex justify-center">
+      <div className="mt-10 flex">
         <a
           href={profileUrl}
           target="_blank"
