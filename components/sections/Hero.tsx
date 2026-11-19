@@ -1,66 +1,63 @@
 import Link from "next/link";
-import { ProfileCard } from "@/components/ui/profile-card";
+import MascotPortfolioHero from "@/components/ui/mascot-portfolio-hero";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden">
-      <div className="absolute inset-0 gradient-radial" aria-hidden />
-      <div className="absolute inset-0 grid-pattern" aria-hidden />
+    <section className="relative border-b border-border">
+      {/* The header floats over the top 5rem of the page. */}
+      <MascotPortfolioHero
+        height="calc(100svh - 5rem)"
+        minHeight="520px"
+        index="UX/26"
+        discipline="UX engineer"
+        tagline="Design it, then build it"
+        collection={["Selected", "Work"]}
+        reel={["Kolkata, India", "Open to work · 2026"]}
+        year="2026"
+        initials="PK"
+        badge="Hire me"
+        line2="Designs"
+        line3="Builds"
+        word="Ship"
+        verticalTag="Code"
+        bracketed="S"
+        seekingLabel="Open to*"
+        seeking="UX roles"
+        href="/cv"
+        services={["Product design", "Front end", "Design systems", "Research"]}
+        greetings={[
+          "Namaste! I'm Proloy.",
+          "I design it, then I build it.",
+          "Psst… I'm open to UX engineer roles.",
+          "Okay, you can stop poking me :)",
+        ]}
+        accent="var(--accent)"
+        accentInk="var(--accent-foreground)"
+        paper="var(--background)"
+        ink="var(--foreground)"
+        card="var(--surface)"
+      />
 
-      <div className="relative mx-auto flex min-h-[70vh] w-full max-w-[1400px] flex-col justify-between px-6 pt-8 pb-12 lg:px-12 lg:pt-12 lg:pb-16">
-        <div>
-          <div className="flex items-center gap-3 animate-fade-in-up">
-            <span className="inline-flex h-2 w-2 rounded-full bg-accent" aria-hidden />
-            <span className="text-[11px] uppercase tracking-[0.25em] text-foreground-muted font-mono">
-              Open to UX engineer and product design roles
-            </span>
-          </div>
-
-          <div className="mt-12 grid gap-8 lg:grid-cols-2 lg:gap-16 items-start">
-            {/* Left Side - Content */}
-            <div>
-              <h1 className="font-display text-display text-balance text-foreground animate-fade-in-up delay-100">
-                Operational
-                <br />
-                Complexity
-                <br />
-                <span className="text-accent">Made Usable</span>
-              </h1>
-
-              <p className="mt-6 text-pretty text-base text-foreground-muted lg:text-lg leading-relaxed animate-fade-in-up delay-200">
-                I design retail software for Ginesys One, a retail ERP used across India, and
-                I build the front end of what I design. On the Ginesys Insights report builder I
-                wrote the whole interface myself, so what customers use is the design, not a
-                rebuild of it.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3 animate-fade-in-up delay-300">
-                <a
-                  href="#work"
-                  className="inline-flex items-center rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground transition-opacity hover:opacity-90"
-                >
-                  See the work
-                </a>
-                <Link
-                  href="/cv"
-                  className="inline-flex items-center rounded-full border border-border-strong px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-surface-elevated"
-                >
-                  Read my CV
-                </Link>
-              </div>
-            </div>
-
-            {/* Right Side - Profile Card */}
-            <div className="hidden lg:flex animate-fade-in-up delay-400">
-              <ProfileCard />
-            </div>
-          </div>
-
-          {/* Mobile Profile Card */}
-          <div className="mt-12 lg:hidden animate-fade-in-up delay-400">
-            <ProfileCard />
-          </div>
+      <div className="mx-auto flex w-full max-w-[1400px] flex-col gap-6 px-6 py-10 lg:flex-row lg:items-center lg:justify-between lg:px-12">
+        <p className="max-w-2xl text-pretty text-base leading-relaxed text-foreground-muted lg:text-lg">
+          I design retail software for Ginesys One, a retail ERP used across India, and I build the
+          front end of what I design. On the Ginesys Insights report builder I wrote the whole
+          interface myself, so what customers use is the design, not a rebuild of it.
+        </p>
+        <div className="flex shrink-0 flex-wrap gap-3">
+          <a
+            href="#work"
+            className="inline-flex items-center rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground transition-opacity hover:opacity-90"
+          >
+            See the work
+          </a>
+          <Link
+            href="/cv"
+            className="inline-flex items-center rounded-full border border-border-strong px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-surface-elevated"
+          >
+            Read my CV
+          </Link>
         </div>
-
       </div>
     </section>
   );
