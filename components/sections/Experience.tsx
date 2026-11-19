@@ -18,7 +18,7 @@ const roles: Role[] = [
     period: "Jul 2024 to Present",
     location: "Kolkata, India",
     focus:
-      "Independent contributor for Ginesys One ERP and POS, owning end to end UX for POS Mobile and ERP Web platforms.",
+      "Sole designer on POS Mobile and ERP Web for Ginesys One, owning the UX end to end.",
     highlights: [
       "Shipped the Quebuster mobile POS MVP, now in use at 1,000+ retailers across India",
       "Lead the mPOS design stream, balancing UX with engineering feasibility",

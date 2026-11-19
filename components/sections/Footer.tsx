@@ -23,13 +23,12 @@ export function Footer() {
               Contact
             </div>
             <h2 className="mt-3 text-balance text-2xl font-semibold tracking-tight text-foreground sm:text-3xl lg:text-4xl">
-              Let us talk about your operational UX problems.
+              Hiring a designer who ships the front end?
             </h2>
             <p className="mt-6 max-w-xl text-pretty text-foreground-muted">
-              Open to Senior Product Designer opportunities at growth stage
-              SaaS and enterprise software companies. Especially interested in
-              teams working on retail operations, supply chain, healthcare, or
-              other complex operational software.
+              Open to UX engineer and product designer roles. Especially
+              interested in teams building complex operational software: retail,
+              supply chain, healthcare.
             </p>
 
             <a
@@ -107,7 +106,7 @@ export function Footer() {
           <div>Proloy Karmakar. Designed and built in Kolkata, 2026.</div>
           <div className="flex items-center gap-2">
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent" />
-            Available for Senior Product Designer roles
+            Open to UX engineer and product designer roles
           </div>
         </div>
       </div>
