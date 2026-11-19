@@ -35,6 +35,8 @@ export type CaseStudy = {
     whereItStands: string;
   };
   metrics?: Metric[];
+  /** Live product and source links, shown on the home page list and case study header. */
+  links?: { label: string; href: string }[];
   href: string;
 };
 
@@ -211,6 +213,10 @@ export const caseStudies: CaseStudy[] = [
       { value: "13", label: "Party games" },
       { value: "0", label: "Apps to install for players" },
       { value: "4 letters", label: "Room code to join" },
+    ],
+    links: [
+      { label: "Play it", href: "https://playbawaal.vercel.app/" },
+      { label: "Code", href: "https://github.com/exonxo/playbawaal" },
     ],
     href: "/work/playbawaal",
   },

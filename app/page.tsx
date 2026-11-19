@@ -5,6 +5,7 @@ import { Experience } from "@/components/sections/Experience";
 import { About } from "@/components/sections/About";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Explorations } from "@/components/sections/Explorations";
+import { Writing } from "@/components/sections/Writing";
 import { Footer } from "@/components/sections/Footer";
 
 // One scrolling page, in the order a recruiter needs it: who this is, the
@@ -18,6 +19,7 @@ export default function Home() {
       <About />
       <Testimonials />
       <Experience />
+      <Writing />
       <Brands />
       <Footer />
     </>

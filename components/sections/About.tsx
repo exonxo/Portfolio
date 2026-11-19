@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Reveal } from "@/components/ui/reveal";
 
 // Compact on purpose: who I am, what I do, what I build with. One screen on
 // desktop, so a recruiter doesn't have to scroll to get the picture.
@@ -44,7 +45,7 @@ export function About() {
 
         <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:gap-14">
           {/* Photo and quick facts */}
-          <div className="lg:col-span-4">
+          <Reveal className="lg:col-span-4">
             <div className="overflow-hidden rounded-3xl border border-border bg-surface">
               <div className="relative aspect-[4/3] bg-surface-elevated lg:aspect-square">
                 <Image
@@ -66,10 +67,10 @@ export function About() {
                 ))}
               </dl>
             </div>
-          </div>
+          </Reveal>
 
           {/* Intro, what I do, stack */}
-          <div className="lg:col-span-8">
+          <Reveal index={1} className="lg:col-span-8">
             <h2 className="font-display text-display text-balance text-foreground">
               I design it, <span className="text-accent">then I build it.</span>
             </h2>
@@ -135,7 +136,7 @@ export function About() {
                 Email me
               </a>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

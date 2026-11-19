@@ -1,8 +1,15 @@
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ExternalLink } from "lucide-react";
 import type { CaseStudy } from "@/content/caseStudies";
 
-export function CaseStudyHero({ caseStudy }: { caseStudy: CaseStudy }) {
+export function CaseStudyHero({
+  caseStudy,
+  readingMinutes,
+}: {
+  caseStudy: CaseStudy;
+  /** Estimated reading time for the whole page, shown beside the status. */
+  readingMinutes?: number;
+}) {
   const brief = [
     { label: "Problem", text: caseStudy.brief.problem },
     { label: "My role", text: caseStudy.brief.myRole },
@@ -28,11 +35,38 @@ export function CaseStudyHero({ caseStudy }: { caseStudy: CaseStudy }) {
           <span className="rounded-full border border-border-strong px-3 py-1 text-foreground-muted">
             {caseStudy.capability}
           </span>
+          {readingMinutes !== undefined && (
+            <span className="font-mono text-[11px] tracking-[0.2em] text-foreground-subtle">
+              {readingMinutes} min read
+            </span>
+          )}
         </div>
 
         <h1 className="mt-6 max-w-4xl text-balance text-[clamp(2rem,4.5vw,3.75rem)] font-semibold leading-[1.08] tracking-tight text-foreground">
           {caseStudy.title}
         </h1>
+
+        {caseStudy.links && caseStudy.links.length > 0 && (
+          <div className="mt-8 flex flex-wrap gap-3">
+            {caseStudy.links.map((link, i) => (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={
+                  i === 0
+                    ? "inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground transition-opacity hover:opacity-90"
+                    : "inline-flex items-center gap-2 rounded-full border border-border-strong px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-surface-elevated"
+                }
+              >
+                {link.label}
+                <ExternalLink className="h-4 w-4" strokeWidth={2.25} aria-hidden />
+                <span className="sr-only">(opens in a new tab)</span>
+              </a>
+            ))}
+          </div>
+        )}
 
         {/* The 30-second version. Everything below it is optional reading. */}
         <dl className="mt-12 max-w-4xl divide-y divide-border border-y border-border">

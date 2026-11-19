@@ -8,10 +8,19 @@ type SectionProps = {
   children: ReactNode;
 };
 
+/** Stable anchor id for a section, derived from its eyebrow ("The problem" -> "the-problem"). */
+export function sectionId(eyebrow: string) {
+  return eyebrow
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 export function CaseSection({ eyebrow, title, icon: Icon, children }: SectionProps) {
   return (
-    <section className="border-b border-border/60">
-      <div className="mx-auto w-full max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
+    <section id={sectionId(eyebrow)} className="scroll-mt-20 border-b border-border/60">
+      {/* At xl the left 14rem is kept free for the sticky "On this page" index. */}
+      <div className="mx-auto w-full max-w-7xl px-6 py-20 lg:px-10 lg:py-24 xl:pl-56">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <div className="flex items-center gap-3 text-xs uppercase tracking-[0.18em] text-foreground-subtle">
