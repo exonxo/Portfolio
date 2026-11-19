@@ -1,4 +1,5 @@
 import { Mail, ArrowUpRight, Globe } from "lucide-react";
+import { Reveal } from "@/components/ui/reveal";
 
 function LinkedinIcon({ className }: { className?: string }) {
   return (
@@ -18,7 +19,7 @@ export function Footer() {
     <footer className="bg-background">
       <div className="mx-auto w-full max-w-7xl px-6 py-20 lg:px-10 lg:py-24">
         <div className="grid gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-7">
+          <Reveal className="lg:col-span-7">
             <div className="text-xs uppercase tracking-[0.18em] text-foreground-subtle">
               Contact
             </div>
@@ -42,9 +43,9 @@ export function Footer() {
                 strokeWidth={2.25}
               />
             </a>
-          </div>
+          </Reveal>
 
-          <div className="lg:col-span-5">
+          <Reveal index={1} className="lg:col-span-5">
             <div className="text-xs uppercase tracking-[0.18em] text-foreground-subtle">
               Elsewhere
             </div>
@@ -99,7 +100,7 @@ export function Footer() {
                 </a>
               </li>
             </ul>
-          </div>
+          </Reveal>
         </div>
 
         <div className="mt-20 flex flex-col gap-3 border-t border-border pt-8 text-sm text-foreground-subtle sm:flex-row sm:items-center sm:justify-between">

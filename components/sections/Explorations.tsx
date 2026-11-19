@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import { Reveal } from "@/components/ui/reveal";
 
 type Exploration = {
   title: string;
@@ -78,7 +79,7 @@ export function Explorations() {
     <section id="explorations" className="scroll-mt-24 border-b border-border">
       <div className="mx-auto w-full max-w-[1400px] px-6 py-20 lg:px-12 lg:py-24">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-3xl">
+          <Reveal className="max-w-3xl">
             <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.25em] text-foreground-subtle">
               <span className="inline-block h-px w-8 bg-accent" />
               Explorations
@@ -90,7 +91,7 @@ export function Explorations() {
               Concept redesigns, AI product ideas, spatial UI and the odd
               illustration, made in my own time.
             </p>
-          </div>
+          </Reveal>
 
           <a
             href="https://www.behance.net/proloykarmakar"
@@ -110,8 +111,8 @@ export function Explorations() {
       {/* One swipeable row instead of a tall grid: the work stays visible without the scroll. */}
       <div className="mx-auto w-full max-w-[1400px] px-6 pb-20 lg:px-12 lg:pb-24">
         <ul className="-mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3 lg:-mt-8">
-          {explorations.map((exp) => (
-            <li key={exp.href} className="w-64 shrink-0 snap-start sm:w-72">
+          {explorations.map((exp, i) => (
+            <Reveal as="li" key={exp.href} index={i} className="w-64 shrink-0 snap-start sm:w-72">
               <a
                 href={exp.href}
                 target="_blank"
@@ -141,7 +142,7 @@ export function Explorations() {
                   </h3>
                 </div>
               </a>
-            </li>
+            </Reveal>
           ))}
         </ul>
       </div>

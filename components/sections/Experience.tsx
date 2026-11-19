@@ -1,4 +1,5 @@
 import { Building2, Briefcase, ArrowRight } from "lucide-react";
+import { Reveal } from "@/components/ui/reveal";
 
 type Role = {
   company: string;
@@ -57,7 +58,7 @@ export function Experience() {
   return (
     <section id="experience" className="relative border-b border-border">
       <div className="mx-auto w-full max-w-[1400px] px-6 py-20 lg:px-12 lg:py-24">
-        <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
+        <Reveal className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.25em] text-foreground-subtle">
               <span className="inline-block h-px w-8 bg-accent" />
@@ -76,12 +77,13 @@ export function Experience() {
             <br />
             <span className="text-foreground-muted">4+ years</span>
           </div>
-        </div>
+        </Reveal>
 
         <div className="mt-12 space-y-6">
           {roles.map((role, idx) => (
-            <article
+            <Reveal as="article"
               key={role.company}
+              index={idx}
               className="group relative overflow-hidden rounded-3xl border border-border bg-surface transition-colors hover:border-border-strong"
             >
               {role.current && (
@@ -132,7 +134,7 @@ export function Experience() {
                   </ul>
                 </div>
               </div>
-            </article>
+            </Reveal>
           ))}
         </div>
       </div>
