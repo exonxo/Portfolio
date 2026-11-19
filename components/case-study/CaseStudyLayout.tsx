@@ -1,6 +1,10 @@
 import { Children, isValidElement, type ReactElement, type ReactNode } from "react";
 import type { CaseStudy } from "@/content/caseStudies";
-import { keyDecisions } from "@/content/caseStudyMeta";
+import { beforeAfter, designToCode, doDifferently, flowMaps, keyDecisions } from "@/content/caseStudyMeta";
+import { BeforeAfter } from "./BeforeAfter";
+import { DesignToCode } from "./DesignToCode";
+import { DoDifferently } from "./DoDifferently";
+import { FlowMap } from "./FlowMap";
 import { CaseStudyHero } from "./CaseStudyHero";
 import { KeyDecisions } from "./KeyDecisions";
 import { NextCase } from "./NextCase";
@@ -60,6 +64,9 @@ export function CaseStudyLayout({
     <>
       <CaseStudyHero caseStudy={caseStudy} readingMinutes={readingMinutes} />
       <KeyDecisions decisions={decisions} />
+      <FlowMap map={flowMaps[caseStudy.slug]} />
+      <BeforeAfter data={beforeAfter[caseStudy.slug]} />
+      <DesignToCode data={designToCode[caseStudy.slug]} />
 
       <div className="relative">
         {/* The index sits in the left rail that CaseSection leaves free at xl. */}
@@ -73,6 +80,7 @@ export function CaseStudyLayout({
         {children}
       </div>
 
+      <DoDifferently points={doDifferently[caseStudy.slug]} />
       <NextCase currentSlug={caseStudy.slug} />
     </>
   );

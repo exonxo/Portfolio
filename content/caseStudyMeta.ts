@@ -80,3 +80,91 @@ export const keyDecisions: Record<string, KeyDecision[]> = {
     },
   ],
 };
+
+// Flow map: the product's main flow. Each step jumps to the section that
+// covers it; `section` is that CaseSection's eyebrow (see sectionId()).
+
+export type FlowStep = { label: string; section: string };
+export type FlowMap = { title: string; steps: FlowStep[] };
+
+export const flowMaps: Record<string, FlowMap> = {
+  "ginesys-pos": {
+    title: "The billing flow",
+    steps: [
+      { label: "Log in and tag the customer", section: "The core flow" },
+      { label: "Scan items", section: "Scanning" },
+      { label: "Apply the retailer's pricing rules", section: "Retailer policy" },
+      { label: "Take payment", section: "Payment" },
+      { label: "Look up price and stock", section: "Item Enquiry" },
+    ],
+  },
+  "reports-insights": {
+    title: "How the project ran",
+    steps: [
+      { label: "Sessions with reporting teams", section: "The setup" },
+      { label: "What they wanted, in order", section: "Findings" },
+      { label: "What I chose not to design", section: "A decision" },
+      { label: "The prototype", section: "The prototype" },
+      { label: "Building the front end", section: "Building it" },
+    ],
+  },
+  "ginesys-wms": {
+    title: "A warehouse task",
+    steps: [
+      { label: "One hand free", section: "The constraint" },
+      { label: "Scan with the viewfinder", section: "Scanner redesign" },
+      { label: "Four guided steps", section: "Form and flow redesign" },
+      { label: "Task done", section: "Outcome" },
+    ],
+  },
+  easecare: {
+    title: "The marketplace spine",
+    steps: [
+      { label: "Two apps, one model", section: "The approach" },
+      { label: "Request, bid, book", section: "Key flows" },
+      { label: "Built in code", section: "Building it" },
+      { label: "Live", section: "Outcome" },
+    ],
+  },
+  playbawaal: {
+    title: "A round of BAWAAL",
+    steps: [
+      { label: "Host opens it on the TV", section: "How it plays" },
+      { label: "Secrets stay on each phone", section: "Design" },
+      { label: "The host runs the game", section: "Building it" },
+      { label: "Signed, encrypted updates", section: "Keeping it fair" },
+      { label: "Bots play every game", section: "Testing" },
+    ],
+  },
+};
+
+// Before and after: the old screen next to the redesign. Leave a case out
+// until a real "before" screenshot exists; never mock one up.
+
+export type BeforeAfter = {
+  before: string;
+  after: string;
+  width: number;
+  height: number;
+  beforeLabel: string;
+  afterLabel: string;
+  caption: string;
+};
+
+export const beforeAfter: Record<string, BeforeAfter> = {};
+
+// Design to production: the same screen as a design, a coded prototype and
+// the shipped change. Fill in once the design export and PR link exist.
+
+export type DesignToCode = {
+  design: { src: string; width: number; height: number; label: string };
+  prototype: { src: string; width: number; height: number; label: string };
+  production: { href: string; label: string; detail: string };
+};
+
+export const designToCode: Record<string, DesignToCode> = {};
+
+// What I'd do differently, in the owner's own words only. POS and Insights
+// already have a Reflection section on the page, so they're not repeated here.
+
+export const doDifferently: Record<string, string[]> = {};
