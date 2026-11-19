@@ -15,8 +15,9 @@ export function Brands() {
       <div className="mx-auto w-full max-w-[1400px] px-6 py-20 lg:px-12 lg:py-24">
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <div className="text-[11px] uppercase tracking-[0.25em] text-foreground-subtle font-mono">
-              Trust
+            <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.25em] text-foreground-subtle">
+              <span className="inline-block h-px w-8 bg-accent" />
+              Worked with
             </div>
             <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight text-foreground sm:text-4xl text-balance">
               Worked with teams shipping at real world scale.

@@ -4,23 +4,21 @@ import { Brands } from "@/components/sections/Brands";
 import { Experience } from "@/components/sections/Experience";
 import { About } from "@/components/sections/About";
 import { Testimonials } from "@/components/sections/Testimonials";
-import { ToolStack } from "@/components/sections/ToolStack";
 import { Explorations } from "@/components/sections/Explorations";
 import { Footer } from "@/components/sections/Footer";
 
 // One scrolling page, in the order a recruiter needs it: who this is, the
-// work, then background. Nothing is hidden behind a tab.
+// work (case studies, then side explorations), then who I am and background.
 export default function Home() {
   return (
     <>
       <Hero />
       <SelectedWork />
+      <Explorations />
       <About />
       <Testimonials />
       <Experience />
       <Brands />
-      <ToolStack />
-      <Explorations />
       <Footer />
     </>
   );
