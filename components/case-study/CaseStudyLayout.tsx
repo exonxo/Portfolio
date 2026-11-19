@@ -1,7 +1,6 @@
 import { Children, isValidElement, type ReactElement, type ReactNode } from "react";
 import type { CaseStudy } from "@/content/caseStudies";
-import { beforeAfter, designToCode, doDifferently, flowMaps, keyDecisions } from "@/content/caseStudyMeta";
-import { BeforeAfter } from "./BeforeAfter";
+import { designToCode, doDifferently, flowMaps, keyDecisions } from "@/content/caseStudyMeta";
 import { DesignToCode } from "./DesignToCode";
 import { DoDifferently } from "./DoDifferently";
 import { FlowMap } from "./FlowMap";
@@ -65,7 +64,6 @@ export function CaseStudyLayout({
       <CaseStudyHero caseStudy={caseStudy} readingMinutes={readingMinutes} />
       <KeyDecisions decisions={decisions} />
       <FlowMap map={flowMaps[caseStudy.slug]} />
-      <BeforeAfter data={beforeAfter[caseStudy.slug]} />
       <DesignToCode data={designToCode[caseStudy.slug]} />
 
       <div className="relative">

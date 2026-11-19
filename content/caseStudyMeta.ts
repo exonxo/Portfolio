@@ -138,21 +138,6 @@ export const flowMaps: Record<string, FlowMap> = {
   },
 };
 
-// Before and after: the old screen next to the redesign. Leave a case out
-// until a real "before" screenshot exists; never mock one up.
-
-export type BeforeAfter = {
-  before: string;
-  after: string;
-  width: number;
-  height: number;
-  beforeLabel: string;
-  afterLabel: string;
-  caption: string;
-};
-
-export const beforeAfter: Record<string, BeforeAfter> = {};
-
 // Design to production: the same screen as a design, a coded prototype and
 // the shipped change. Fill in once the design export and PR link exist.
 
